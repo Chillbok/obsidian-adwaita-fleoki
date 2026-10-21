@@ -1,77 +1,40 @@
-# Obsidian Adwaita Theme
+# Obsidian Adwaita Flexoki Theme
 
-This is an [Obisidian](https://obsidian.md/) theme in the style of [Gnome](https://www.gnome.org/) [Adwaita](https://en.wikipedia.org/wiki/Adwaita_(design_language)). The goal of this project is to make Obsidian look more native on Gnome Desktop Environments like on [Ubuntu](https://ubuntu.com/) or [Fedora](https://getfedora.org/). 
+> 이 README 문서는 영어 사용자를 위한 영어 README 문서입니다. 한국어 버전은 [여기](README-KR.md)에 있습니다.
+> This README is the English README, intended for English-speaking users. The Korean version is [here](README-KR.md).
 
-![](generated/theme-preview.png)
+![capture-image](generated/capture-image.png)
 
-## Features 
+This theme is based on a fork of [obsidian-adwaita-theme](https://github.com/birneee/obsidian-adwaita-theme). It applies the [flexoki](https://github.com/kepano/flexoki) color scheme by Kepano — the true hero of our time and the CEO of Obsidian — and aims to provide a slightly better design for Korean users. Although this theme is made for Korean users, English-speaking users can use it without any issues.
 
-<table>
-<tr>
-<td>
+# Additional Changes
 
-### Window Buttons
-<img src="generated/compare-window-buttons.png">
+## Theme
 
-### Tabs
-<img src="generated/compare-tabs.png">
+Applied Kepano's [flexoki](https://github.com/kepano/flexoki) theme.
 
-### Icons
-<img src="generated/compare-icons.png">
+Both dark and light themes are supported.
 
-### Dark and Light Theme
-Change under `Settings > Options > Appearance > Base color scheme`.
+|Dark mode|Light mode|
+|:---:|:---:|
+|![Dark mode image](generated/capture-image-dark.png)|![Light mode image](generated/capture-image.png)|
 
-</td>
-<td>
+## Font
 
-### Colors
-<img src="generated/compare-color.png">
+Applied [RIDIBatang](https://ridicorp.com/ridibatang/) for better readability. It is personally my favorite Korean typeface.
 
-### Font
-<img src="generated/compare-font.png">
+The font supports both Korean and English.
 
-### Style Settings Plugin Support
-For customization see [Style Settings](#style-settings).
+# License and Credits
 
-### TBD Rounded Window Corners
-As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/) Gnome Extension.
+This theme is built on the following open source and open-licensed assets.
 
-</td>
-</tr>
-</table>
+|Asset|License|Copyright|
+|---|---|---|
+|Theme code|MIT|© 2022 birneee ([upstream](https://github.com/birneee/obsidian-adwaita-theme))|
+|[Flexoki](https://stephango.com/flexoki) colors|MIT|© 2023 Steph Ango|
+|[RIDIBatang](https://ridicorp.com/ridibatang/) font|SIL OFL 1.1|© 2019 RIDI & Sandoll|
+|[Adwaita icons](https://www.gnome.org)|CC BY-SA 3.0|GNOME Project|
 
-## Installation
-
-### Obsidian Community Theme Store
-1. In Obsidian go to `Settings >  Options > Appearance > Themes > Manage` search for `Adwaita`
-2. Click `Install and use`
-3. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
-
-### Automatic
-1. Install [just](https://github.com/casey/just)
-2. Set `OBSIDIAN_HOME` environment variable to your vault path
-3. run `just install`
-4. In Obsidian go to `Settings > Options > Appearance > Themes` and select the `Adwaita` theme
-5. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
-
-### Manual
-
-1. create a `.obsidian/themes/Adwaita` directory in your Obsidian vault
-2. Copy `theme.css` and `manifest.json` to the created `Adwaita` folder
-3. In Obsidian go to `Settings > Options > Appearance > Themes` and select the `Adwaita` theme
-4. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
-
-## Build
-
-- Install [just](https://github.com/casey/just) and [sassc](https://github.com/sass/sassc)
-- Run `just`
-
-## Style Settings
-Requires the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings).
-Adjust under `Settings > Community Plugins > Style Settings > Adwaita`.
-
-![](src/preview/style-settings.png)
-
-## Contribution
-Feel free to create Issues and Pull Requests.
+The full font license is included in [licenses/RIDIBatang-OFL.txt](licenses/RIDIBatang-OFL.txt).
+This theme uses the RIDIBatang font provided by RIDI Corporation.
