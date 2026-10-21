@@ -1,0 +1,36 @@
+// 본문 · UI · 제목 서체 — RIDIBatang
+// 폰트는 WOFF2 → base64 data URI로 임베드한다(별도 파일/폴더 불필요).
+// 이유: 모바일(iOS/Android WebView)에서 테마 CSS의 볼트 상대경로 url()이 해석되지 않는다.
+// 생성 파일: src/_fonts_embedded.scss  (sassc가 이어붙여 theme.css 안에 포함)
+//
+// 모노스페이스는 의도적으로 건드리지 않는다 → Obsidian 기본 --font-monospace-default 사용.
+
+@import 'fonts_embedded';
+
+@font-face {
+    font-family: "RIDIBatang";
+    src: url("#{$font-ridibatang-data}") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@mixin flexoki-typography {
+    // override 체인이 테마 변수·설정 UI 폰트보다 앞서므로 !important와 함께 사용
+    --font-text-override: "RIDIBatang", ui-serif, serif !important;
+    --font-interface-override: "RIDIBatang", ui-serif, serif !important;
+    --font-print-override: "RIDIBatang", ui-serif, serif !important;
+
+    --font-text-theme: "RIDIBatang", ui-serif, serif !important;
+    --font-interface-theme: "RIDIBatang", ui-serif, serif !important;
+
+    // 제목 굵기 최대치 (RIDIBatang은 400 단일 → 합성 볼드 사용)
+    --h1-weight: 900;
+    --h2-weight: 900;
+    --h3-weight: 900;
+    --h4-weight: 900;
+    --h5-weight: 900;
+    --h6-weight: 900;
+    --inline-title-weight: 900;
+    --bold-weight: 900;
+}

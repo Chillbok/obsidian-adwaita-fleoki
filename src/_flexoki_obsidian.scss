@@ -1,0 +1,77 @@
+// Flexoki 팔레트를 Obsidian 기본 색 변수에 매핑.
+// 이 테마는 --background-primary 등 표면 색을 직접 정의하지 않고
+// Obsidian 기본 팔레트(--color-base-*)에서 파생시키므로, 여기가 실질적인 색 지정 지점이다.
+
+@mixin flexoki-obsidian-light {
+    --color-red-rgb: 175, 48, 41;
+    --color-orange-rgb: 188, 82, 21;
+    --color-yellow-rgb: 173, 131, 1;
+    --color-green-rgb: 102, 128, 11;
+    --color-cyan-rgb: 36, 131, 123;
+    --color-blue-rgb: 32, 94, 166;
+    --color-purple-rgb: 94, 64, 157;
+    --color-pink-rgb: 160, 47, 111;
+
+    --color-red: #{$flexoki-red-600};
+    --color-orange: #{$flexoki-orange-600};
+    --color-yellow: #{$flexoki-yellow-600};
+    --color-green: #{$flexoki-green-600};
+    --color-cyan: #{$flexoki-cyan-600};
+    --color-blue: #{$flexoki-blue-600};
+    --color-purple: #{$flexoki-purple-600};
+    --color-pink: #{$flexoki-magenta-600};
+
+    --accent-h: 175;
+    --accent-s: 57%;
+    --accent-l: 33%;
+
+    --color-base-00: #{$flexoki-paper};
+    --color-base-05: #{$flexoki-paper};
+    --color-base-10: #{$flexoki-50};
+    --color-base-20: #{$flexoki-50};
+    --color-base-25: #{$flexoki-100};
+    --color-base-30: #{$flexoki-100};
+    --color-base-35: #{$flexoki-150};
+    --color-base-40: #{$flexoki-200};
+    --color-base-50: #{$flexoki-300};
+    --color-base-60: #{$flexoki-500};
+    --color-base-70: #{$flexoki-600};
+    --color-base-100: #{$flexoki-black};
+}
+
+@mixin flexoki-obsidian-dark {
+    --color-red-rgb: 209, 77, 65;
+    --color-orange-rgb: 218, 112, 44;
+    --color-yellow-rgb: 208, 162, 21;
+    --color-green-rgb: 135, 154, 57;
+    --color-cyan-rgb: 58, 169, 159;
+    --color-blue-rgb: 67, 133, 190;
+    --color-purple-rgb: 139, 126, 200;
+    --color-pink-rgb: 206, 93, 151;
+
+    --color-red: #{$flexoki-red-400};
+    --color-orange: #{$flexoki-orange-400};
+    --color-yellow: #{$flexoki-yellow-400};
+    --color-green: #{$flexoki-green-400};
+    --color-cyan: #{$flexoki-cyan-400};
+    --color-blue: #{$flexoki-blue-400};
+    --color-purple: #{$flexoki-purple-400};
+    --color-pink: #{$flexoki-magenta-400};
+
+    --accent-h: 175;
+    --accent-s: 45%;
+    --accent-l: 43%;
+
+    --color-base-00: #{$flexoki-black};
+    --color-base-05: #{$flexoki-black};
+    --color-base-10: #{$flexoki-950};
+    --color-base-20: #{$flexoki-950};
+    --color-base-25: #{$flexoki-900};
+    --color-base-30: #{$flexoki-900};
+    --color-base-35: #{$flexoki-850};
+    --color-base-40: #{$flexoki-800};
+    --color-base-50: #{$flexoki-700};
+    --color-base-60: #{$flexoki-600};
+    --color-base-70: #{$flexoki-500};
+    --color-base-100: #{$flexoki-200};
+}

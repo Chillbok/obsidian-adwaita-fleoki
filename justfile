@@ -35,8 +35,19 @@ adw-icons-scss:
 
 
 css:
-    sassc src/theme.scss theme.css
-    printf '%s\n%s\n' "/* This file is generated; DO NOT EDIT. */" "$(cat theme.css)" > theme.css
+    #!/usr/bin/env bash
+    set -euo pipefail
+    {
+        cat <<'HEADER'
+/* This file is generated; DO NOT EDIT.
+ * Theme code: MIT (c) 2022 birneee, (c) 2026 Chillbok
+ * Flexoki colors: MIT (c) 2023 Steph Ango - https://stephango.com/flexoki
+ * RIDIBatang font: SIL OFL 1.1 (c) 2019 RIDI & Sandoll - see licenses/RIDIBatang-OFL.txt
+ * Adwaita icons: CC BY-SA 3.0, GNOME Project - https://www.gnome.org
+ */
+HEADER
+        sassc src/theme.scss
+    } > theme.css
 
 preview:
     inkscape -h 1080 src/preview/theme-preview.svg -o generated/theme-preview.png
@@ -58,7 +69,7 @@ install:
     if ! [ -d "${OBSIDIAN_HOME}/.obsidian" ]; then
         echo "failed to install: \$OBSIDIAN_HOME/.obsidian does not exist"; exit 1
     fi
-    mkdir -p "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita"
-    cp manifest.json "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita/manifest.json"
-    cp theme.css "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita/theme.css"
-    echo "installed at ${OBSIDIAN_HOME}/.obsidian/themes/Adwaita"
+    mkdir -p "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita Flexoki"
+    cp manifest.json "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita Flexoki/manifest.json"
+    cp theme.css "${OBSIDIAN_HOME}/.obsidian/themes/Adwaita Flexoki/theme.css"
+    echo "installed at ${OBSIDIAN_HOME}/.obsidian/themes/Adwaita Flexoki"

@@ -1,7 +1,7 @@
 /* @settings
 
-name: Adwaita
-id: com-github-birneee-obsidian-adwaita
+name: Adwaita Flexoki
+id: com-github-chillbok-obsidian-adwaita-flexoki
 settings:
     -
         title: Window Buttons
@@ -155,17 +155,24 @@ settings:
 }
 
 @import '../generated/adw_icons';
+@import 'flexoki_palette';
+@import 'flexoki_obsidian';
+@import 'fonts';
 @import 'adwaita_colors_dark';
 @import 'adwaita_colors_light';
 @import 'adwaita_colors';
 
 body {
     @include adwaita-colors;
+    @include flexoki-typography;
+
     &.theme-dark {
         @include adwaita-colors-dark;
+        @include flexoki-obsidian-dark;
     }
     &.theme-light {
         @include adwaita-colors-light;
+        @include flexoki-obsidian-light;
     }
 }
 
@@ -188,34 +195,34 @@ body.adwaita-colors-linux-only.mod-linux {
         };
     }
     &.theme-dark  {
-        --titlebar-text-color: #919191;
-        --icon-color: #929292;
-        --icon-color-hover: #929292;
-        --icon-color-focused: #929292;
-        --tab-text-color: #929292;
-        --tab-text-color-focused: #8a8a8a;
-        --tab-text-color-focused-active-current: #8a8a8a;
-        --background-modifier-hover: #323232;
+        --titlebar-text-color: #{$flexoki-500};
+        --icon-color: #{$flexoki-500};
+        --icon-color-hover: #{$flexoki-400};
+        --icon-color-focused: #{$flexoki-300};
+        --tab-text-color: #{$flexoki-500};
+        --tab-text-color-focused: #{$flexoki-400};
+        --tab-text-color-focused-active-current: #{$flexoki-200};
+        --background-modifier-hover: #{$flexoki-850};
         &.is-focused {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
-                --background-modifier-hover: #464646;
+                --background-modifier-hover: #{$flexoki-800};
             };
         }
     }
     &.theme-light {
-        --titlebar-text-color: #8c8c8c;
-        --icon-color: #939393;
-        --icon-color-hover: #939393;
-        --icon-color-focused: #939393;
-        --tab-text-color: #939393;
-        --tab-text-color-focused: #939393;
-        --tab-text-color-focused-active-current: #939393;
-        --background-modifier-hover: #f0f0f0;
+        --titlebar-text-color: #{$flexoki-500};
+        --icon-color: #{$flexoki-500};
+        --icon-color-hover: #{$flexoki-600};
+        --icon-color-focused: #{$flexoki-700};
+        --tab-text-color: #{$flexoki-600};
+        --tab-text-color-focused: #{$flexoki-700};
+        --tab-text-color-focused-active-current: #{$flexoki-700};
+        --background-modifier-hover: #{$flexoki-50};
         &.is-focused {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
-                --background-modifier-hover: #d8d8d8;
+                --background-modifier-hover: #{$flexoki-150};
             };
         }
     }
@@ -232,19 +239,19 @@ body.adwaita-mod-linux-only.mod-linux {
     --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
 
     &.theme-dark {
-        --adwaita-mod-background: #2e2e2e;
-        --adwaita-mod-background-focus: #444444;
-        --adwaita-mod-background-hover: #4f4f4f;
-        --adwaita-mod-background-active: #6e6e6e;
-        --adwaita-mod-foreground: #929292;
+        --adwaita-mod-background: #{$flexoki-900};
+        --adwaita-mod-background-focus: #{$flexoki-800};
+        --adwaita-mod-background-hover: #{$flexoki-700};
+        --adwaita-mod-background-active: #{$flexoki-600};
+        --adwaita-mod-foreground: #{$flexoki-500};
     }
     
     &.theme-light {
-        --adwaita-mod-background: #efefef;
-        --adwaita-mod-background-focus: #d8d8d8;
-        --adwaita-mod-background-hover: #cfcfcf;
-        --adwaita-mod-background-active: #b3b3b3;
-        --adwaita-mod-foreground: #949494;
+        --adwaita-mod-background: #{$flexoki-50};
+        --adwaita-mod-background-focus: #{$flexoki-150};
+        --adwaita-mod-background-hover: #{$flexoki-200};
+        --adwaita-mod-background-active: #{$flexoki-300};
+        --adwaita-mod-foreground: #{$flexoki-500};
     }
 
     &.adwaita-window-button-minimize-hide .titlebar-button-container.mod-right .titlebar-button.mod-minimize{
@@ -389,16 +396,16 @@ body.adwaita-tabs-linux-only.mod-linux {
     }
 
     &.theme-dark {
-        --tab-background-active: #323232;
+        --tab-background-active: #{$flexoki-850};
         &.is-focused {
-            --tab-background-active: #464646;
+            --tab-background-active: #{$flexoki-800};
         }
     }
 
     &.theme-light {
-        --tab-background-active: #f0f0f0;
+        --tab-background-active: #{$flexoki-50};
         &.is-focused {
-            --tab-background-active: #d8d8d8;
+            --tab-background-active: #{$flexoki-150};
         }
     }
 
@@ -549,4 +556,31 @@ body.adwaita-icons-linux-only.mod-linux {
     .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon {
         @include replace-svg(var(--adwaita-icon-folder-saved-search-symbolic))
     }
+}
+
+// ---------------------------------------------------------------------------
+// Adwaita Flexoki · 제목/강조 굵기
+// RIDIBatang은 400 단일 웨이트라 700/900 요청 시 합성 볼드가 발동한다.
+// 여기에 얇은 획 보강(-webkit-text-stroke)을 더해 실제 두께를 올린다.
+// - 코드 영역(--font-monospace)은 획 보강에서 제외된다.
+// ---------------------------------------------------------------------------
+.markdown-rendered h1,
+.markdown-rendered h2,
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6,
+.markdown-rendered .inline-title,
+.markdown-rendered strong,
+.cm-s-obsidian .cm-header-1,
+.cm-s-obsidian .cm-header-2,
+.cm-s-obsidian .cm-header-3,
+.cm-s-obsidian .cm-header-4,
+.cm-s-obsidian .cm-header-5,
+.cm-s-obsidian .cm-header-6,
+.cm-s-obsidian .cm-strong,
+.cm-s-obsidian .inline-title {
+    font-synthesis: weight;
+    font-weight: 900;
+    -webkit-text-stroke: 0.28px currentColor;
 }

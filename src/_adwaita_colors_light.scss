@@ -1,50 +1,51 @@
-// source: https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
+// Flexoki 대응 (원본: libadwaita named colors)
+// light: paper 바탕에 잉크, accent는 cyan-600
 
 @mixin adwaita-colors-light {
-    --adwaita-accent-color: #1c71d8;
-    --adwaita-accent-bg-color: #3584e4;
-    --adwaita-accent-fg-color: #ffffff;
+    --adwaita-accent-color: #{$flexoki-cyan-600};
+    --adwaita-accent-bg-color: #{$flexoki-cyan-600};
+    --adwaita-accent-fg-color: #{$flexoki-paper};
 
-    --adwaita-destructive-color: #c01c28;
-    --adwaita-destructive-bg-color: #e01b24;
-    --adwaita-destructive-fg-color: #ffffff;
+    --adwaita-destructive-color: #{$flexoki-red-600};
+    --adwaita-destructive-bg-color: #{$flexoki-red-600};
+    --adwaita-destructive-fg-color: #{$flexoki-paper};
 
-    --adwaita-success-color: #1b8553;
-    --adwaita-success-bg-color: #2ec27e;
-    --adwaita-success-fg-color: #ffffff;
+    --adwaita-success-color: #{$flexoki-green-600};
+    --adwaita-success-bg-color: #{$flexoki-green-600};
+    --adwaita-success-fg-color: #{$flexoki-paper};
 
-    --adwaita-warning-color: #9c6e03;
-    --adwaita-warning-bg-color: #e5a50a;
-    --adwaita-warning-fg-color: rgba(0, 0, 0, 0.8);
+    --adwaita-warning-color: #{$flexoki-yellow-600};
+    --adwaita-warning-bg-color: #{$flexoki-yellow-600};
+    --adwaita-warning-fg-color: #{$flexoki-ink-80};
 
-    --adwaita-error-color: #c01c28;
-    --adwaita-error-bg-color: #e01b24;
-    --adwaita-error-fg-color: #ffffff;
+    --adwaita-error-color: #{$flexoki-red-600};
+    --adwaita-error-bg-color: #{$flexoki-red-600};
+    --adwaita-error-fg-color: #{$flexoki-paper};
 
-    --adwaita-window-bg-color: #fafafa;
-    --adwaita-window-fg-color: rgba(0, 0, 0, 0.8);
+    --adwaita-window-bg-color: #{$flexoki-paper};
+    --adwaita-window-fg-color: #{$flexoki-ink-80};
 
-    --adwaita-view-bg-color: #ffffff;
-    --adwaita-view-fg-color: rgba(0, 0, 0, 0.8);
+    --adwaita-view-bg-color: #{$flexoki-paper};
+    --adwaita-view-fg-color: #{$flexoki-ink-80};
 
-    --adwaita-headerbar-bg-color: #ffffff;
-    --adwaita-headerbar-fg-color: rgba(0, 0, 0, 0.8);
+    --adwaita-headerbar-bg-color: #{$flexoki-50};
+    --adwaita-headerbar-fg-color: #{$flexoki-ink-80};
 
-    --adwaita-headerbar-border-color: 	rgba(0, 0, 0, 0.8);
-    --adwaita-headerbar-backdrop-color: #fafafa;
-    --adwaita-headerbar-shade-color: 	rgba(0, 0, 0, 0.12);
+    --adwaita-headerbar-border-color: #{$flexoki-ink-80};
+    --adwaita-headerbar-backdrop-color: #{$flexoki-paper};
+    --adwaita-headerbar-shade-color: #{$flexoki-shade-light-hard};
 
-    --adwaita-card-bg-color: #ffffff;
-    --adwaita-card-fg-color: 	rgba(0, 0, 0, 0.8);
-    --adwaita-card-shade-color: rgba(0, 0, 0, 0.07);
+    --adwaita-card-bg-color: #{$flexoki-50};
+    --adwaita-card-fg-color: #{$flexoki-ink-80};
+    --adwaita-card-shade-color: #{$flexoki-shade-light};
 
-    --adwaita-dialog-bg-color: #ffffff;
-    --adwaita-dialog-fg-color: rgba(0, 0, 0, 0.8);
+    --adwaita-dialog-bg-color: #{$flexoki-paper};
+    --adwaita-dialog-fg-color: #{$flexoki-ink-80};
 
-    --adwaita-popover-bg-color: #fafafa;
-    --adwaita-popover-fg-color: rgba(0, 0, 0, 0.8);
-    --adwaita-popover-shader-color: rgba(0, 0, 0, 0.07);
+    --adwaita-popover-bg-color: #{$flexoki-50};
+    --adwaita-popover-fg-color: #{$flexoki-ink-80};
+    --adwaita-popover-shader-color: #{$flexoki-shade-light};
 
-    --adwaita-shade-color: 	rgba(0, 0, 0, 0.07);
-    --adwaita-scrollbar-outline-color: #ffffff;
+    --adwaita-shade-color: #{$flexoki-shade-light};
+    --adwaita-scrollbar-outline-color: #{$flexoki-paper};
 }
