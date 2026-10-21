@@ -25,6 +25,32 @@ Applied [RIDIBatang](https://ridicorp.com/ridibatang/) for better readability. I
 
 The font supports both Korean and English.
 
+## Installation
+
+### Community theme store
+
+1. Open `Settings → Appearance → Themes` and click `Manage`
+2. Search for `Adwaita Flexoki`
+3. Click `Install and use`
+
+### Manual
+
+1. Create `.obsidian/themes/Adwaita Flexoki` inside your vault
+2. Copy `theme.css` and `manifest.json` from the [latest release](https://github.com/Chillbok/obsidian-adwaita-fleoki/releases/latest) into that folder
+3. Select `Adwaita Flexoki` under `Settings → Appearance → Themes`
+
+## Style Settings
+
+Install the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin to customise the theme under `Settings → Community plugins → Style Settings → Adwaita Flexoki`.
+
+| Option | Description |
+|---|---|
+| Window Buttons | Linux only. Scale, right margin, and hiding individual window buttons |
+| Tabs → Short | Narrows the tab width. Off by default |
+| Font | Built-in RIDIBatang (default) or your system font |
+
+Colours, tab styling, and icons are always applied and do not need to be enabled.
+
 # License and Credits
 
 This theme is built on the following open source and open-licensed assets.

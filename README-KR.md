@@ -25,6 +25,32 @@ Kepano의 [flexoki](https://github.com/kepano/flexoki) 테마를 적용하였습
 
 한국어와 영어를 모두 지원하는 폰트입니다.
 
+## 설치
+
+### 커뮤니티 테마 스토어
+
+1. `설정 → 테마 → 찾아보기`를 엽니다
+2. `Adwaita Flexoki`를 검색합니다
+3. `설치 및 사용`을 누릅니다
+
+### 수동 설치
+
+1. 볼트 안에 `.obsidian/themes/Adwaita Flexoki` 폴더를 만듭니다
+2. [최신 릴리스](https://github.com/Chillbok/obsidian-adwaita-fleoki/releases/latest)에서 `theme.css`와 `manifest.json`을 내려받아 그 폴더에 넣습니다
+3. `설정 → 테마`에서 `Adwaita Flexoki`를 선택합니다
+
+## Style Settings
+
+[Style Settings](https://github.com/mgmeyers/obsidian-style-settings) 플러그인을 설치하면 `설정 → 커뮤니티 플러그인 → Style Settings → Adwaita Flexoki`에서 세부 조정이 가능합니다.
+
+| 항목 | 설명 |
+|---|---|
+| 창 버튼 | Linux 전용입니다. 배율, 오른쪽 여백, 각 버튼 숨김을 설정합니다 |
+| 탭 → 짧은 탭 | 탭 폭을 좁힙니다. 기본값은 꺼짐입니다 |
+| 폰트 | 내장 리디바탕(기본) 또는 시스템 폰트를 선택합니다 |
+
+색상, 탭 스타일, 아이콘은 항상 적용되며 별도로 켤 필요가 없습니다.
+
 # 라이선스 및 크레딧
 
 이 테마는 다음 오픈소스·오픈 라이선스 자산을 기반으로 만들어졌습니다.
