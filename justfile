@@ -38,6 +38,8 @@ css:
     #!/usr/bin/env bash
     set -euo pipefail
     {
+        # @charset must be the very first bytes of the file
+        printf '@charset "UTF-8";\n'
         cat <<'HEADER'
 /* This file is generated; DO NOT EDIT.
  * Theme code: MIT (c) 2022 birneee, (c) 2026 Chillbok
@@ -46,7 +48,7 @@ css:
  * Adwaita icons: CC BY-SA 3.0, GNOME Project - https://www.gnome.org
  */
 HEADER
-        sassc src/theme.scss
+        sassc src/theme.scss | sed '/^@charset /d'
     } > theme.css
 
 watch:

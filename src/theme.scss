@@ -5,31 +5,18 @@ id: com-github-chillbok-obsidian-adwaita-flexoki
 settings:
     -
         title: Window Buttons
-        description: Style of minimize, maximize and close window buttons
+        title.ko: 창 버튼
+        description: GNOME-style window buttons. Always applied on Linux, where Obsidian draws its own window buttons.
+        description.ko: GNOME 스타일 창 버튼입니다. Obsidian이 자체 창 버튼을 그리는 Linux에서 항상 적용됩니다.
         type: heading
         level: 2
         collapsed: false
     -
-        id: adwaita-mod
-        title: Enable
-        description: Whether to use the Adwaita style window buttons
-        type: class-select
-        default: adwaita-mod-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-mod-always
-            -
-                label: Linux Only
-                value: adwaita-mod-linux-only
-            -
-                label: Never
-                value: adwaita-mod-never
-    -
         id: adwaita-mod-scale
         title: Scale
-        description:
+        title.ko: 크기
+        description: Button scale.
+        description.ko: 버튼 배율입니다.
         type: variable-number
         default: 1
     -
@@ -53,99 +40,40 @@ settings:
 
     -
         title: Tabs
+        title.ko: 탭
         type: heading
         level: 2
         collapsed: false
-    -
-        id: adwaita-tabs
-        title: Enable
-        description: Whether to use the Adwaita style tabs
-        type: class-select
-        default: adwaita-tabs-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-tabs-always
-            -
-                label: Linux Only
-                value: adwaita-tabs-linux-only
-            -
-                label: Never
-                value: adwaita-tabs-never
     -
         id: adwaita-tabs-short
         title: Short
+        title.ko: 짧은 탭
+        description: Narrows the tab width. Off by default.
+        description.ko: 탭 폭을 좁힙니다. 기본값은 꺼짐입니다.
         type: class-toggle
 
     -
-        title: Colors
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-colors
-        title: Enable
-        description: Whether to use the Adwaita colors
-        type: class-select
-        default: adwaita-colors-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-colors-always
-            -
-                label: Linux Only
-                value: adwaita-colors-linux-only
-            -
-                label: Never
-                value: adwaita-colors-never
-
-    -
         title: Font
+        title.ko: 폰트
         type: heading
         level: 2
         collapsed: false
     -
         id: adwaita-font
-        title: Enable
-        description: Whether to use the Cantarell font (must be installed on system)
+        title: Interface and text font
+        title.ko: 인터페이스 및 본문 폰트
+        description: Font used for the interface and note text. The built-in RIDIBatang is embedded in the theme.
+        description.ko: 인터페이스와 노트 본문에 사용할 폰트입니다. 리디바탕은 테마에 내장되어 있습니다.
         type: class-select
-        default: adwaita-font-linux-only
         allowEmpty: false
+        default: adwaita-font-ridibatang
         options:
             -
-                label: Always
-                value: adwaita-font-always
+                label: RIDIBatang (built-in)
+                value: adwaita-font-ridibatang
             -
-                label: Linux Only
-                value: adwaita-font-linux-only
-            -
-                label: Never
-                value: adwaita-font-never
-
-    -
-        title: Icons
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-icon
-        title: Enable
-        description: Whether to use the Adwaita icons
-        type: class-select
-        default: adwaita-icons-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-icons-always
-            -
-                label: Linux Only
-                value: adwaita-icons-linux-only
-            -
-                label: Never
-                value: adwaita-icons-never
+                label: System font
+                value: adwaita-font-system
 */
 
 :root {
@@ -164,7 +92,6 @@ settings:
 
 body {
     @include adwaita-colors;
-    @include flexoki-typography;
 
     &.theme-dark {
         @include adwaita-colors-dark;
@@ -176,10 +103,8 @@ body {
     }
 }
 
-// Adwaita colors
-body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-colors-always,
-body.adwaita-colors-linux-only.mod-linux {
+// Adwaita colors — always applied
+body {
     --titlebar-background: var(--adwaita-headerbar-backdrop-color);
     --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
     --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
@@ -231,10 +156,8 @@ body.adwaita-colors-linux-only.mod-linux {
     }
 }
 
-// Adwaita window mod buttons
-body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-mod-always,
-body.adwaita-mod-linux-only.mod-linux {
+// Adwaita window mod buttons — Linux only, always applied
+body.mod-linux {
     --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
     --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
 
@@ -384,10 +307,8 @@ body.adwaita-mod-linux-only.mod-linux {
 }
 
 
-// Adwaita tabs
-body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-tabs-always,
-body.adwaita-tabs-linux-only.mod-linux {
+// Adwaita tabs — always applied
+body {
     --tab-radius-active: 6px;
 
     &:not(.adwaita-tabs-short) {
@@ -462,26 +383,20 @@ body.adwaita-tabs-linux-only.mod-linux {
     }
 }
 
-// Adwaita font
-body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-font-always,
-body.adwaita-font-linux-only.mod-linux {    
+// Adwaita font — RIDIBatang by default, System font when the class is set
+body:not(.adwaita-font-system) {
+    @include font-ridibatang;
+}
+
+// Adwaita icons — always applied
+body {
     --titlebar-height: 45px;
-    --font-interface-theme: Cantarell;
-    --font-ui-small: 15px;
-    --h1-weight: 900;
+    --header-height: 46px;
+
     .titlebar-text {
         top: 10px;
         height: auto;
     }
-}
-
-// Adwaita icons
-body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-icons-always,
-body.adwaita-icons-linux-only.mod-linux {
-    --titlebar-height: 45px;
-    --header-height: 46px;
 
     svg.logo-wireframe {
         stroke-width: 45;
@@ -563,24 +478,27 @@ body.adwaita-icons-linux-only.mod-linux {
 // RIDIBatang은 400 단일 웨이트라 700/900 요청 시 합성 볼드가 발동한다.
 // 여기에 얇은 획 보강(-webkit-text-stroke)을 더해 실제 두께를 올린다.
 // - 코드 영역(--font-monospace)은 획 보강에서 제외된다.
+// - 시스템 폰트를 선택한 경우에는 적용하지 않는다(실제 볼드 웨이트를 사용).
 // ---------------------------------------------------------------------------
-.markdown-rendered h1,
-.markdown-rendered h2,
-.markdown-rendered h3,
-.markdown-rendered h4,
-.markdown-rendered h5,
-.markdown-rendered h6,
-.markdown-rendered .inline-title,
-.markdown-rendered strong,
-.cm-s-obsidian .cm-header-1,
-.cm-s-obsidian .cm-header-2,
-.cm-s-obsidian .cm-header-3,
-.cm-s-obsidian .cm-header-4,
-.cm-s-obsidian .cm-header-5,
-.cm-s-obsidian .cm-header-6,
-.cm-s-obsidian .cm-strong,
-.cm-s-obsidian .inline-title {
-    font-synthesis: weight;
-    font-weight: 900;
-    -webkit-text-stroke: 0.28px currentColor;
+body:not(.adwaita-font-system) {
+    .markdown-rendered h1,
+    .markdown-rendered h2,
+    .markdown-rendered h3,
+    .markdown-rendered h4,
+    .markdown-rendered h5,
+    .markdown-rendered h6,
+    .markdown-rendered .inline-title,
+    .markdown-rendered strong,
+    .cm-s-obsidian .cm-header-1,
+    .cm-s-obsidian .cm-header-2,
+    .cm-s-obsidian .cm-header-3,
+    .cm-s-obsidian .cm-header-4,
+    .cm-s-obsidian .cm-header-5,
+    .cm-s-obsidian .cm-header-6,
+    .cm-s-obsidian .cm-strong,
+    .cm-s-obsidian .inline-title {
+        font-synthesis: weight;
+        font-weight: 900;
+        -webkit-text-stroke: 0.28px currentColor;
+    }
 }

@@ -15,7 +15,7 @@
     font-display: swap;
 }
 
-@mixin flexoki-typography {
+@mixin font-ridibatang {
     // override 체인이 테마 변수·설정 UI 폰트보다 앞서므로 !important와 함께 사용
     --font-text-override: "RIDIBatang", ui-serif, serif !important;
     --font-interface-override: "RIDIBatang", ui-serif, serif !important;
