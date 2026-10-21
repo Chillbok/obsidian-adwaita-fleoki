@@ -31,7 +31,7 @@ Kepano의 [flexoki](https://github.com/kepano/flexoki) 테마를 적용하였습
 
 | 대상 | 라이선스 | 저작권 |
 |---|---|---|
-| 테마 코드 | MIT | © 2022 birneee ([원본](https://github.com/birneee/obsidian-adwaita-theme)) |
+| 테마 코드 | MIT | © 2022 birneee ([원본](https://github.com/birneee/obsidian-adwaita-theme)), © 2026 Chillbok |
 | [Flexoki](https://stephango.com/flexoki) 색상 | MIT | © 2023 Steph Ango |
 | [리디바탕](https://ridicorp.com/ridibatang/) 폰트 | SIL OFL 1.1 | © 2019 RIDI & Sandoll |
 | [Adwaita 아이콘](https://www.gnome.org) | CC BY-SA 3.0 | GNOME Project |

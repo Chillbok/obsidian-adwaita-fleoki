@@ -31,7 +31,7 @@ This theme is built on the following open source and open-licensed assets.
 
 |Asset|License|Copyright|
 |---|---|---|
-|Theme code|MIT|© 2022 birneee ([upstream](https://github.com/birneee/obsidian-adwaita-theme))|
+|Theme code|MIT|© 2022 birneee ([upstream](https://github.com/birneee/obsidian-adwaita-theme)), © 2026 Chillbok|
 |[Flexoki](https://stephango.com/flexoki) colors|MIT|© 2023 Steph Ango|
 |[RIDIBatang](https://ridicorp.com/ridibatang/) font|SIL OFL 1.1|© 2019 RIDI & Sandoll|
 |[Adwaita icons](https://www.gnome.org)|CC BY-SA 3.0|GNOME Project|
