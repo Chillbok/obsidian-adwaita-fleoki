@@ -16,13 +16,14 @@
 }
 
 @mixin font-ridibatang {
-    // override 체인이 테마 변수·설정 UI 폰트보다 앞서므로 !important와 함께 사용
-    --font-text-override: "RIDIBatang", ui-serif, serif !important;
-    --font-interface-override: "RIDIBatang", ui-serif, serif !important;
-    --font-print-override: "RIDIBatang", ui-serif, serif !important;
-
-    --font-text-theme: "RIDIBatang", ui-serif, serif !important;
-    --font-interface-theme: "RIDIBatang", ui-serif, serif !important;
+    // Obsidian은 사용자 폰트 설정을 body 인라인 스타일(--font-*-override)로 주입하므로
+    // 인라인 선언은 어떤 특이성으로도 이길 수 없다(!important만 가능).
+    // 대신 app.css가 body(0,0,1)에 정의한 파생 변수를 (0,1,1) 선택자로 직접 덮어써서
+    // 인라인 override를 아예 참조하지 않게 한다 → !important 불필요.
+    // 인쇄는 @media print에서 --font-text: var(--font-print) !important 이므로 --font-print만 덮으면 된다.
+    --font-text: "RIDIBatang", ui-serif, serif;
+    --font-interface: "RIDIBatang", ui-serif, serif;
+    --font-print: "RIDIBatang", ui-serif, serif;
 
     // 제목 굵기 최대치 (RIDIBatang은 400 단일 → 합성 볼드 사용)
     --h1-weight: 900;

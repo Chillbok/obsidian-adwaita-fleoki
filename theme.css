@@ -381,7 +381,7 @@ body.mod-linux {
         -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
         mask-image: var(--adwaita-icon-window-close-symbolic); }
       body.mod-linux .titlebar-button-container.mod-right .titlebar-button:hover {
-        background: var(--adwaita-mod-background) !important; }
+        background: var(--adwaita-mod-background); }
       body.mod-linux .titlebar-button-container.mod-right .titlebar-button svg {
         width: 12px;
         height: 12px;
@@ -392,10 +392,10 @@ body.mod-linux {
     color: var(--adwaita-mod-foreground-focus); }
     body.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
     body.mod-linux.is-focused .modal-close-button:hover {
-      background: var(--adwaita-mod-background-hover) !important; }
+      background: var(--adwaita-mod-background-hover); }
     body.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
     body.mod-linux.is-focused .modal-close-button:active {
-      background: var(--adwaita-mod-background-active) !important; }
+      background: var(--adwaita-mod-background-active); }
   body.mod-linux .modal-close-button {
     height: 24px;
     width: 24px;
@@ -461,11 +461,9 @@ body {
       opacity: 1; }
 
 body:not(.adwaita-font-system) {
-  --font-text-override: "RIDIBatang", ui-serif, serif !important;
-  --font-interface-override: "RIDIBatang", ui-serif, serif !important;
-  --font-print-override: "RIDIBatang", ui-serif, serif !important;
-  --font-text-theme: "RIDIBatang", ui-serif, serif !important;
-  --font-interface-theme: "RIDIBatang", ui-serif, serif !important;
+  --font-text: "RIDIBatang", ui-serif, serif;
+  --font-interface: "RIDIBatang", ui-serif, serif;
+  --font-print: "RIDIBatang", ui-serif, serif;
   --h1-weight: 900;
   --h2-weight: 900;
   --h3-weight: 900;
@@ -506,7 +504,7 @@ body {
     display: none; }
   body .sidebar-toggle-button.mod-left .clickable-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-sidebar-show-symbolic);
     mask-image: var(--adwaita-icon-sidebar-show-symbolic);
     width: 16px;
@@ -516,7 +514,7 @@ body {
     display: none; }
   body .sidebar-toggle-button.mod-right .clickable-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-sidebar-show-right-symbolic);
     mask-image: var(--adwaita-icon-sidebar-show-right-symbolic);
     width: 16px;
@@ -526,7 +524,7 @@ body {
     display: none; }
   body .workspace-tab-header-new-tab .clickable-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-tab-new-symbolic);
     mask-image: var(--adwaita-icon-tab-new-symbolic);
     width: 16px;
@@ -536,7 +534,7 @@ body {
     display: none; }
   body .workspace-tab-header-tab-list .clickable-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-go-down-symbolic);
     mask-image: var(--adwaita-icon-go-down-symbolic);
     width: 16px;
@@ -546,7 +544,7 @@ body {
     display: none; }
   body .workspace-tab-header-inner-close-button::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
     mask-image: var(--adwaita-icon-window-close-symbolic);
     width: 16px;
@@ -556,7 +554,7 @@ body {
     display: none; }
   body .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-folder-visiting-symbolic);
     mask-image: var(--adwaita-icon-folder-visiting-symbolic);
     width: 16px;
@@ -566,7 +564,7 @@ body {
     display: none; }
   body .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon::after {
     content: '';
-    background-color: currentColor !important;
+    background-color: currentColor;
     -webkit-mask-image: var(--adwaita-icon-folder-saved-search-symbolic);
     mask-image: var(--adwaita-icon-folder-saved-search-symbolic);
     width: 16px;

@@ -255,7 +255,7 @@ body.mod-linux {
             }
     
             &:hover {
-                background: var(--adwaita-mod-background)!important;
+                background: var(--adwaita-mod-background);
             }
     
             svg {
@@ -272,11 +272,11 @@ body.mod-linux {
             color: var(--adwaita-mod-foreground-focus);
         
             &:hover {
-                background: var(--adwaita-mod-background-hover)!important;
+                background: var(--adwaita-mod-background-hover);
             }
         
             &:active {
-                background: var(--adwaita-mod-background-active)!important;
+                background: var(--adwaita-mod-background-active);
             }
         }
     }
@@ -415,7 +415,7 @@ body {
         }
         &::after {
             content: '';
-            background-color: currentColor!important;
+            background-color: currentColor;
             -webkit-mask-image: $icon-url;
             mask-image: $icon-url;
             width: 16px;
