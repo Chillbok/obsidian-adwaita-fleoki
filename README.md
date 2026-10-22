@@ -36,7 +36,7 @@ The font supports both Korean and English.
 ### Manual
 
 1. Create `.obsidian/themes/Adwaita Flexoki` inside your vault
-2. Copy `theme.css` and `manifest.json` from the [latest release](https://github.com/Chillbok/obsidian-adwaita-fleoki/releases/latest) into that folder
+2. Copy `theme.css` and `manifest.json` from the [latest release](https://github.com/Chillbok/obsidian-adwaita-flexoki/releases/latest) into that folder
 3. Select `Adwaita Flexoki` under `Settings → Appearance → Themes`
 
 ## Style Settings

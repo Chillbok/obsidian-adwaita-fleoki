@@ -36,7 +36,7 @@ Kepano의 [flexoki](https://github.com/kepano/flexoki) 테마를 적용하였습
 ### 수동 설치
 
 1. 볼트 안에 `.obsidian/themes/Adwaita Flexoki` 폴더를 만듭니다
-2. [최신 릴리스](https://github.com/Chillbok/obsidian-adwaita-fleoki/releases/latest)에서 `theme.css`와 `manifest.json`을 내려받아 그 폴더에 넣습니다
+2. [최신 릴리스](https://github.com/Chillbok/obsidian-adwaita-flexoki/releases/latest)에서 `theme.css`와 `manifest.json`을 내려받아 그 폴더에 넣습니다
 3. `설정 → 테마`에서 `Adwaita Flexoki`를 선택합니다
 
 ## Style Settings
